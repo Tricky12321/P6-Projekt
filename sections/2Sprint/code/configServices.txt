@@ -1,0 +1,17 @@
+// needed to load configuration from appsettings.json
+services.AddOptions();
+
+// needed to store rate limit counters and ip rules
+services.AddMemoryCache();
+
+//load general configuration from appsettings.json
+services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+
+// inject counter and rules stores
+services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+
+services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+// configuration (resolvers, counter key builders)
+services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();

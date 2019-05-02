@@ -1,0 +1,12 @@
+"IpRateLimiting": {
+ "EnableEndpointRateLimiting": false,
+ "StackBlockedRequests": false,
+ "HttpStatusCode": 429,
+ "GeneralRules": [
+     {
+         "Endpoint": "*",
+         "Period": "1s",
+         "Limit": 5
+     }
+ ]
+}

@@ -1,0 +1,47 @@
+\section{Technologies \& Tools} 
+% Used Tools (Thue)
+%    -   Flutter
+%    -   Xamarin
+%    -   Git/Github
+%    -   WebAPI
+%    -   Swagger
+% Hvad det er
+% Hvad kan man bruge det til
+
+This sections describes which tools, frameworks and software were used to aid the development of the software for the GIRAF project. 
+
+\subsubsection{Flutter}
+Flutter is a framework for developing apps for Android and iOS. Flutter is open source and developed by Google. Flutter uses the general-purpose programming language Dart. \citep{cite:Flutter}
+%%All graphics in Flutter apps are done by Google's Skia graphics library, which is natively supported on android. \todo{Hvad med IOS} 
+
+\subsubsection{Business Logic Component Pattern}
+The Business Logic Component (BLoC) pattern's purpose is to separate the business logic of an application from its other components. The UI of the application should therefore only worry about things that is going to be shown to the user, and the BLoC behind it is responsible for the computations on the business logic. Other components communicate with the BLoC through sinks and streams. The sinks are used as paths into the BLoC, where the other components send events about what the BLoC should do. The stream is the BLoC's output, through which the BLoC will deliver results to the connected components. \citep{cite:blocPattern} 
+
+A simple example for the use of the BLoC pattern is a Taxi application, where a user will call a cab through, for example, a button press. The button press will send an event to the BLoC which will then try to order a cab and send it to the user's location. The BLoC will then send a result back to the UI and the user, whether the cap is on its way or the order was declined.
+
+\paragraph{Dart} is a Object oriented language, which syntax is based on the known structures of C\#, Java, and C++. Dart also compiles to both ARM and x86 allowing a wide range of supported devices. \citep{cite:DartLang}
+
+% Kilde: https://flutter.dev/
+% dartlang.org
+\subsubsection{Xamarin}
+Xamarin is a platform for developing programs and apps. Xamarin focuses on multiplatform support, running on Android, iOS, Windows and macOS. Xamarin is made by Microsoft, and the engineers behind the Mono Framework. C\# is the primary programming language used and XAML is used for the designer. \citep{cite:XamarinVS}
+\subsubsection{Git}
+Git is a free open source version control tool, allowing branches, releases, commits and merging in one solution. There are multiple implementations of Git available, such as Bitbucket, Phabricator, Gitlab and Github. Git is used to enable easy collaboration on big projects where many users are required to work within the same files. 
+\citep{cite:Git}
+% Kilde: https://git-scm.com/
+\subsubsection{Github}
+Github is a free-to-use web-based hosting service that is based on Git. Github allows issue tracking, feature requests, task management and wikis. Github is the largest collection of open source software in the world. 
+\citep{cite:Github}
+% Kilde: https://github.com/
+\subsubsection{Swagger}
+Swagger is an API designer tool, that can be used to create and maintain an API. Swagger can generate client- and server-side code, which then can be implemented to perform the desired functions. \citep{cite:Swagger}
+
+\subsubsection{Application Program Interface}
+Application Program Interface (API) is a program interface that allows communication between individual programs. APIs can have many forms such as Remote APIs and WebAPIs. There are also APIs that returns raw binary, which is very effective, but requires same remote and local system. 
+
+The API is a better way to interact with the backend systems, because the backend can be changed on the server side without affecting the clients. If it also affected the clients, it would require an update for all clients which is much harder to do. \citep{cite:API}
+
+\paragraph{WebAPI} is an API on a web server, taking requests and delivering information though the HTTP/HTTPS protocols. WebAPIs work by taking a request, and returning an answer in a given format. The most used formats are Extensible Markup Language (XML) and Javascript Object Notation (json). \citep{cite:WebAPI}
+
+\subsubsection{Linter}
+Linter is a code inspector, that is in place to ensure that code is written in the same style, and that code is written accordingly to the standards. The linter ensures that no code, that is not up to the standards, are allowed to be merged in pull requests. The linter used for the project is the dart standard, and is provided by the flutter library. 

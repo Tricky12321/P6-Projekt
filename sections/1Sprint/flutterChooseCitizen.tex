@@ -1,0 +1,25 @@
+\section{User Story 47: Create Choose Citizen Screen Flutter} 
+\label{sect:chooseCitizenFlutter}
+The first couple of days after changing to Flutter, we decided to implement the first user story, "As a guardian I would like to be able to choose a citizen so that I can choose who I’m editing the week plan for", the user story had the following associated tasks:
+
+\begin{itemize}
+    \item Make a screen to list all citizens.
+    \item Make/Use a BLoC to handle the data.
+    \item Make a widget to standardize how to show a citizen.
+    \item When choosing a citizen I should be routed to the "Choose weekplan" screen (see user story 50).
+\end{itemize}
+
+These tasks were developed all together in the development group. This way, we could work together to try to get a hang of Flutter. As we got more experienced with Flutter, we decided to move towards pair programming.
+Our first user story after the change to Flutter, concerns the design of the user interface for choosing a citizen. This was the same user story we were assigned when the application were implemented with Xamarin. This time we had to build up the user interface from scratch, rather than re-design the existing interface. 
+The prototype that was given for the Xamarin interface still applied for the Flutter interface, and can be seen together with the previous choose citizen interface from Xamarin in section~\ref{sect:chooseCitizenXamarin}. We therefore had a starting point for the layout of the user interface and could immediately implement the user interface according to the prototype, instead of trying to adjust an already existing user interface to the requested changes.
+The results of the design in flutter can be seen on figure~\ref{fig:flutterChooseCitizenHorizontal}.
+\todo{correct images to actual citizen images when implemented}
+
+\figur  {H} %Placement
+        {0.7} %Size
+        {sections/1Sprint/images/chooseCitizenScreen_new_horizontal.jpg} %Filepath
+        {Landscape choose citizen screen after the remake in Flutter.} %Caption
+        {fig:flutterChooseCitizenHorizontal} %Label
+
+The redesign of the screen for choosing a citizen made it possible to see multiple citizens side by side with their name and picture. The amount of citizens displayed on each row depends on whether the device is in landscape or portrait mode. 
+The ability to search for a citizen was removed in the new design, as it was not a feature included in the prototype.

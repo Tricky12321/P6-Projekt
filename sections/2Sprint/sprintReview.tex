@@ -1,0 +1,40 @@
+\section{Sprint Review}
+\subsubsection{Overall Sprint Review}
+In sprint 2, a sprint review was held again with the PO group and a representative from each group. Contrary to the sprint review of the first sprint, this sprint review had a release. The meeting started with the PO group presenting the state of the application in the current release version. This included the following functionality:
+%Skriv om hvad funktionalitet der virker nu
+
+When the app was opened, the login screen would appear. Here, one could log in using a username and password, which led to the choose citizen screen as seen on figure~\ref{fig:flutterChooseCitizenHorizontal}. Choosing one of the citizens would show a list of weekplans for the given citizen. Choosing one would then direct the user to the actual weekplan, showing the activites for the week. On this screen, an appbar in the top included icons to log out, switch between guardian and citizen mode and adjust settings. However, in this version, the settings screen did not include any adjustable settings and switching between guardian and citizen mode did not change the functionality yet. The log out icon worked, prompting the user with a dialogue box to ask if they wanted to log out. Aside from these three icons, the appbar also included a back button, leading back to the screen with the list of weekplans. 
+
+After this, the PO group evaluated how well the sprint goals of functionality (mainly from translation to Flutter), stability and usability had been fulfilled. 
+Considering the shift to Flutter, the goal for functionality was to recreate the functionality previously available. This goal was not fully completed, but a lot of the core functionality was implemented.
+The stability goal was considered complete, as the functionality implemented for the release worked correctly without crashing. 
+The goal for usability was considered partly complete, as the UI had been improved to fit the prototypes created in cooperation with the customers, but still had some unwanted quirks. 
+
+\subsubsection{Our Sprint Review}
+The majority of our sprint goals, as mentioned in section~\ref{sect:sprintGoals2}, were finished by the end of sprint 2. Though the notification dialog and loading spinner were fully developed, they were not included in the release because of problems with testing. This was pushed to the next sprint.
+
+Additionally, user stories from sprint 1 were polished and implemented into the release version, along with the missing connections to other parts of the application. On top of this, some time was also used to review other groups' pull requests.
+
+
+\subsubsection{Finished}
+\begin{itemize}
+    \item \textbf{Task 1: Making the process of logging in as a developer less tedious, with a feature to fill in login information automatically.}
+        \subitem The application now has an Auto-login button on the login screen, when the application is in debug mode.
+    \item \textbf{Task 2: API should time out after a while to prevent requests from crashing the API.}
+        \subitem This was done by using rate limiting unique IP's to a maximum number of request limit per second. 
+    \item \textbf{User story 47: As a guardian I would like to be able to choose a citizen so that I can choose who I’m editing the week plan for.}
+        \subitem The choose citizen screen now routes to choose weekplan screen, for the chosen citizen.
+    \item \textbf{User story 83: Load configuration from configuration file.}
+        \subitem Loads configuration settings from environment files in the assets folder.
+\end{itemize}
+
+\subsubsection{Unfinished}
+\begin{itemize}
+    \item \textbf{User story 48: As a guardian I would like to be able to log into the system using a username and password, so that I can see my associated citizens.}
+        \subitem A loading spinner should be shown while contacting API, so the user does not think the app is frozen.
+    \item \textbf{User story 88: As a developer I would like a notification widget so that I avoid duplicated code.}
+    \subitem Testing that the dialog closes after pressing the okay button is missing
+\end{itemize}
+
+%oStatus på produktet
+%Goals: Stabilitet, udseende og funktionalitet (stabilt, ser fint nok ud I guess, en god del funktionalitet men mangler stadig en del)

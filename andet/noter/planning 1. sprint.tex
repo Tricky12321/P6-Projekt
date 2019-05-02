@@ -1,0 +1,71 @@
+17: 4
+16: 4
+15: 3
+14: 3
+13: 2
+12: 
+11: 5
+10: 
+9: 5
+8: 
+7: 3
+6: 
+5: 
+4: 3
+2: 5
+
+2, 9 og 11
+
+Vores story er 9
+
+%-------------------------------
+%-------------------------------
+%-------------------------------
+%-------------------------------
+%-------------------------------
+%-------------------------------
+
+Offline database
+-	Kun relevant.
+	-	5
+
+Interface til lokal database
+	-	21
+
+Guardians kan gøres offline
+-	Al informationen kan gøres offline for en guardian.
+- UI
+    - 5
+- Sikkerhed
+    - 13
+
+Sync og Merge.
+-	En gang i mellem, måske ved hver ændring.
+	-	21
+
+SUM: 64
+
+
+
+%--------------------------------
+
+Offline database:
+- Have subdatabase liggende på enheden, så appen stadig fungerer offline, så man kan skifte bruger, foretage ændringer osv.
+- Kun hent det nødvendige information. F.eks. for en guardian, hent information for guardian og de citizens han/hun holder styr på. Eller måske per institution. 
+
+Interface til database:
+- Interface til kommunikation mellem enheden og databasen. 
+
+Guardian offline mode:
+- Forbereder på at køre offline, henter alt det nødvendige data ned.
+- Tilføjelse af toggle-funktion til GUI.
+- Der skal være styr på sikkerhed når der skal gemmes persondata lokalt på en enhed. Kryptering(på database-fil? eller hvert stykke information?).
+- Hvad med offline-funktionalitet hvis nettet pludselig går ned? Løbende synkronisering med online database? Hvordan spiller det sammen med toggle funktion?
+
+Synkronisering og Merge:
+- Løbende synkronisering hver gang der foretages en ændring?
+- Gem API kommandoer der udføres i offline mode og udfør på online database for at synkronisere når der er net igen.
+- Hvad hvis der er foretaget andre ændringer i mellemtiden(merge conflict)?
+
+
+

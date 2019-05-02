@@ -1,0 +1,5 @@
+\section{Azure Pipelines update}
+As part of the Server Meta Group, there was a task with adding iOS building to Azure Pipelines, and fixing some names in the Azure Pipelines settings. However since there is still no Apple Developer license available the iOS app cannot be compiled at this time. Because of this the iOS azure pipeline job is disabled until a valid developer license is provided. 
+
+We also moved the android compiler from MacOS to Ubuntu LTS 16.04, because we experienced problems with the Mac VM's used by Azure Pipeline being unstable, and not always available, resulting in no one being able to merge pull requests.
+

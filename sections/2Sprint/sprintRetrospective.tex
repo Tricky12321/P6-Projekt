@@ -1,0 +1,48 @@
+\section{Sprint Retrospective}
+\label{sect:RetrospectiveSprint2}
+\subsubsection{Overall Retrospective}
+\label{sect:TeamRetrospectiveSprint2}
+The sprint retrospective of sprint 2 followed the same procedure as the one from sprint 1, described in section~\ref{sect:TeamRetrospectiveSprint1}, except that the discussions were done in 4 groups rather than 6 groups.
+The table~\ref{table:retrospectiveIdeasSprint2} shows the top three most voted proposals from the sprint retrospective meeting.
+
+%PR var langsomt i starten, blev bedre senere. Godt at sætte sig ind til gruppen
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{X|l}
+\textit{Proposal}    & \textit{Votes}  \\ \hline
+1. The release preparation should be one day where all developers are gathered, so merging the features and preparing them for a release can be done faster.  & 12  \\ \hline
+2. When creating a pull request, always include a screenshot of the implemented screens & 9 \\ \hline
+3. Linter gives a warning when the document has undocumented public members, consider making this an error, to force documenting the code and provide an easier handover. & 8  \\ \hline
+\end{tabularx}
+\caption{The three most voted proposals.}
+\label{table:retrospectiveIdeasSprint2}
+\end{table}
+
+Proposal 1: The purpose of this proposal was to have a more efficient release preparation. The first release preparation was rather hectic, due to groups running back and forth between other groups or communicating over medias to resolve occurring problems. This was rather time consuming and unstructured, so if instead the entire team were available at the same location, the process of communicating and discussing between groups would become easier, resulting in a faster and better release.
+
+Proposal 2: This proposal was for other developers to have an easier job reviewing pull requests. If a pull request is issued with a vague description, the reviewer might have a difficult job understanding exactly what they are reviewing. If the pull request is issued with a picture of what has been created/changed, the reviewer can more easily understand what work has been done. Everyone seemed to agree, and pull requests from this point forward contained pictures of the work when possible.
+
+Proposal 3: This concerns the problem that at the time, there was a lot of undocumented code, even though we were not far into the project. Not only could the warnings be annoying, but not fixing them by documenting the code could lead to problems, both in future sprints and for future students taking over the development of the project. Making Linter see the warnings as errors instead, would assure that the developers document their work, avoiding undocumented code due to either laziness or forgetfulness.
+
+\todo{Maybe talk more about this when we know it is something to write about}
+
+
+\subsubsection{Our Retrospective}
+\label{sect:ourRetrospectiveSprint2}
+
+The second sprint was much more organized than the first sprint. The core of the project had been properly implemented in Flutter, every group had time to familiarize themselves with Flutter, and plenty of user stories and other tasks were ready to be worked on. This let us properly use the system of issues, pull requests and reviews, as described in section~\ref{sec:workOrganization}. This created a good, structured workflow both between development groups and internally within groups. With this, we could assign our group to a couple of issues and then distribute the work within the group.
+
+However, we also encountered problems during the sprint. Due to inadequate communication, we ended up having too many issues assigned. On top of that, we worked on several issues on the same branch, which made the implementation messy. This resulted in a big pull request that was difficult to review, and which lasted for over two weeks with over 100 comments. Preferably, one issue should be developed in one branch and result in one pull request. This was something we had to improve on in the following sprints. Our plans for solving these problems can be seen in table~\ref{table:ourRetrospectiveIdeasSprint2}.
+
+\begin{table}[ht]
+\begin{tabularx}{\textwidth}{X|X}
+\textit{Problems from sprint.} & \textit{Planned solutions for following sprints.} \\\hline
+Several issues in a single branch. &  More pair programming, to prevent that one developer is the only one that knows what a branch contains. \\ \hline
+Not being transparent of what user stories the group has acquired. & More transparency of what issues the development group is currently working on, could be handled by making use of a scrum board. \\\hline
+Big pull requests that take a long time to solve. & Peer reviewing code internally in the group before a pull request is opened. \\\hline
+\end{tabularx}
+\caption{Thoughts about the sprint.}
+\label{table:ourRetrospectiveIdeasSprint2}
+\end{table}
+
+%Better communication in the group

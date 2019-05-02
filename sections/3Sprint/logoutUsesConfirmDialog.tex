@@ -1,0 +1,13 @@
+\section{User story 166: Logout uses Confirm Dialog}
+This user story regards the alert shown when trying to log out of the application. Before, a standard alert message was shown, with the possibility of closing the message or confirming the logout. 
+Since this type of action is either a cancellation or a confirmation, it was possible to use the newly implemented Confirm Dialog. Since we were assigned both the issues of creating the confirm dialog and integrating it with actions in the application, we first had to wait for the confirm dialog to be accepted and merged into the develop branch, before we could use it in other issues. 
+When the Confirm Dialog was accepted, it was an easy job to replace the alert message with our Confirm Dialog. The Confirm Dialog was given the information to display and the logic that the confirmation button should execute. 
+The results of integrating the Confirm Dialog for the logout feature, is shown on figure~\ref{fig:ConfirmDialogLogout}.
+
+\todo{correct image when the button widget is implemented}
+
+\figur  {H} %Placement
+        {0.7} %Size
+        {sections/3Sprint/images/ConfirmDialogLogout.png} %Filepath
+        {A confirmation dialog asking the user to either cancel or confirm the logout action.} %Caption
+        {fig:ConfirmDialogLogout} %Label

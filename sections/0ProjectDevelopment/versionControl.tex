@@ -1,0 +1,12 @@
+\section{Version Control}
+\label{sect:versionControl}
+%Code workflow (gitflow)
+In the project, several groups had to work on the same product at the same time. To make this possible, version control in GIRAF was managed using Github. Each part of the GIRAF product had its own repository which was used for the version control of the specific product. The repository had several branches:
+\begin{itemize}
+    \item (1) Master
+    \item (1) Development
+    \item (1) Release
+    \item (*) Feature
+\end{itemize}
+
+The master branch contained products that were ready for release, and should always be able to be build. The development branch contained the version of the product that was being developed at the time. The development branch should also always be able to be build. When a version of the product was ready for release, it was merged into the release branch. Lastly, we had the feature branches, which were used for the implementation of new features in the product. The feature branches were normally used by one development group, and the group was responsible for the content of the branch. This meant that this type of branch might not be able to be build and might contain untested code.

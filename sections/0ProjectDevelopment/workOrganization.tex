@@ -1,0 +1,14 @@
+\section{Work Organization}
+\label{sec:workOrganization}
+As mentioned in section~\ref{sect:versionControl}, the overall project workflow was structured using Github. The way it was done was by managing a product backlog on Github containing the work that needed to be done. The backlog was created by identifying this work, partly through what was received from previous year and partly through communication with costumers. Both the creation and management of the backlog was done by the PO group. 
+
+Everything in the product backlog was distributed into numbered \textbf{issues} of different sizes and priorities. An issue could for example be a user story describing something to implement, a bug that needed to be fixed, or some other development task. 
+These issues would be assigned to the development groups, who would then have the responsibility of completing the issues. 
+Each group should only have a few issues assigned at one time, to prevent groups from having issues they do not actively work on and which another could have completed instead. 
+
+When assigned to an issue, a group would create a feature branch, branching from the develop branch, to implement the issue in. 
+When an issue was complete, the group would create a pull request for the issue. This is a request to merge the feature branch into the develop branch, thus including it in the product. 
+Before a pull request could be accepted and merged, two external reviews from other groups were necessary, along with a design approval from the PO group. This worked by having the scrum group assign two other groups for review. These groups would then look through the code to look for bugs, whether the required functionality had been implemented properly and so on. 
+After the reviewers accepted the pull request, it would be merged into the develop branch, the respective issue would be closed and the feature branch would be deleted. 
+
+%Every section as issue #XXX, start with description of user story or task

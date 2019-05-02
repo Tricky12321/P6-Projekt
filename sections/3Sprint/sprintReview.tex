@@ -1,0 +1,41 @@
+\section{Sprint Review}
+\subsubsection{Overall Sprint Review}
+No official sprint review was held in sprint 3. However, a release party was held where each group presented the work they had accomplished during the sprint \todo{Write about release party?}.
+Overall, the sprint was very productive and implemented a lot of new functionality. 
+
+At this point, when logging in, a loading spinner would be shown while waiting for a response from the API. If the login credentials were wrong, the user would be prompted with the notification dialog, telling them that the username or password was wrong. 
+When navigating to the weekplan selection screen, an option was available to create a new weekplan. When viewing a weekplan, it was possible to add new activities to the weekplan. On top of this, the functionality was added to reorder activities in the weekplan by dragging them to new locations.
+The appbar was also updated, so different icons could be included based on where the appbar was used, and the color was changed to be gradient. 
+The API was also greatly improved by changing the way pictograms were handled in the database. 
+
+The goals of the sprint were considered fulfilled, with all the new added functionality. Additionally, few open issues remained at the end of the sprint, which let us focus on what should be implemented in the final sprint.
+\todo{Did we miss any major functionality?}
+
+
+%loading spinner and notify dialog
+%create weekplan
+%add activity
+%reorder activity
+%build-a-bar appbar update 
+
+\subsubsection{Our Sprint Review}
+This sprint went well for us, and we finished all of our sprint goals, mentioned in section~\ref{sect:sprintGoals3}. This means that we finished all the new issues in the sprint, as well as old issues remaining from earlier sprints. This meant that we had no unfinished work going into sprint 4. 
+
+\subsubsection{Finished}
+\begin{itemize}
+    \item \textbf{API Update.}
+        \subitem Retrieving the pictrograms from NFS instead of the database, results in a significant improvement in speed and data load.
+    \item \textbf{User story 53: As a guardian I would like to be able to re-order the activities in a week plan, so that I can easily re-prioritize the activities for the citizen.}
+        \subitem Activities can now be dragged and dropped, allowing to re-order activities.
+    \item \textbf{User story 108: Missing tests for issue \#88 }
+        \subitem Tests was created, thus also finishing user story 88.
+    \item \textbf{User story 138: Show an alert when trying to log in with the wrong information.}
+        \subitem Logging in with incorrect information prompts a notification.
+    \item \textbf{User story 158: As a developer i would like a default widget for confirmation dialogs.}
+        \subitem The Confirm Dialog was created, allowing developers to use the dialog as any sort of confirmation actions.
+    \item \textbf{User story 166: Logout button needs to use Confirm Dialog.}
+        \subitem The logout button on the app bar now uses the Confirm Dialog, to either cancel or confirm the logout.
+    \item \textbf{User story 201: The app bar should have correct colors so that it fits the design guide.}
+        \subitem The colors of the app bar now reflects the colors documented in the design guide. 
+\end{itemize}
+

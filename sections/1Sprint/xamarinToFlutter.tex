@@ -1,0 +1,23 @@
+\section{The Change from Xamarin to Flutter}
+\label{sect:XamarinToFlutter}
+%When working on the Weekplanner app on Linux, there were complications in the compile process since Xamarin is not officially supported on Linux. Because of this, it was decided to ditch Xamarin in favor of Flutter.
+
+During the first sprint, the development teams ran into an obstacle. The problem was that a lot of developers were using Linux as their operating system. As Xamarin had stopped the support for Linux, some groups had only a few or no PCs that were able to compile the project.
+To solve this problem, it was suggested to change the development from Xamarin to Flutter. This change had some pros and cons, which are listed in the following table:
+ 
+\begin{table}[ht]
+\begin{tabularx}{\textwidth-7pt}{X|X}
+\textit{Pros}    & \textit{Cons}  \\ \hline
+Includes hot reload, which allows for faster development. & The entire application needs to be rewritten. \\ \hline
+Applications are compiled to have native performance on both Android and iOS. &  First time developing in Flutter for some development groups. \\ \hline
+Cross platform development (Windows, macOS, Linux). & \cellcolor{Gray}\\ \hline
+Large library of available widgets allows for quick and easy implementation of user interfaces. & \cellcolor{Gray}\\
+\end{tabularx}
+\caption{Pros and Cons for using Flutter over Xamarin for GIRAF project \citep{cite:FlutterDEV}.}
+\end{table}
+
+The front-end skill group had a meeting to address this problem, where each member of the front-end skill group represented the group's opinion. After this meeting it was decided that the development of the Weekplanner should be converted to Flutter.
+
+One of the groups got assigned the task of implementing the core functions from the Xamarin Weekplanner in Flutter, to allow for other development groups to begin development on the Flutter Weekplanner. The group got everything up and running over a weekend, and the other development groups could begin development the following week.
+
+The con "First time developing in Flutter for some development groups" was accommodated by doing a Flutter workshop for all groups, where they could be introduced to Flutter and ask questions about it. The workshop was led by the group that implemented the core functionality in Flutter. It started off by having the group give a presentation of the basics of Flutter and how they implemented it in the project. After this, they did a live coding session, where they implemented a simple user story, to show how to develop in Flutter. In addition to this, they also welcomed any questions that might occur later in the sprints, but encouraged other groups to learn more and take ownership of the code as well.

@@ -1,0 +1,23 @@
+\section{API Update}
+There was an issue with the database and the API, requiring a lot of data being transferred when pictograms were requested. This was a problem because the database had trouble handling the huge amounts of data. 
+
+During inspection of why this was the case, it was discovered that the entire pictograms were stored in the database, requiring the pictograms to be extracted from the database every time a request for pictograms was made. 
+
+In order to solve this, we decided to extract the pictograms from the database and have them stored on disk, so they could just be loaded by the API. We than did some bench marking to determine if the change had improved the data transfer and response time. The results showed a huge improvement in both data transferred and response time. The improvement can be seen in table~\ref{tab:newApi}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+                    & Data transferred   & Response time \\ \hline
+        Old         & 14020 MB          & 1482 ms       \\ \hline 
+        New         & 60 MB             & 30 ms         \\ \hline
+        Improvement & 234x              & 49x           \\ \hline
+    \end{tabular}
+    \caption{Api before and after changes}
+    \label{tab:newApi}
+\end{table}
+
+The massive improvement is due to data being stored outside the database, thus not needing to be fetched from the database, first being transferred to the api and than to the client. Instead, it can be directly transferred to the client from the api. This improvement has other advantages than just being faster, it also puts less load on the database, allowing the database to handle more connections. This also massively reduced the size of the database, making it much easier to search in, and puts less stress on the disk.
+
+The conclusion is that the improvement to the back end has decreased the amount of data being transferred, decreased the work the database has to handle, and improved the response time massively. This update was worked on by members of the Server meta group, and was implemented with changes to the api and database. 

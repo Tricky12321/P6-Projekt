@@ -1,0 +1,49 @@
+Rapport:
+
+Pod:
+A Pod encapsulates an application container (or, in some cases, multiple containers), storage resources, a unique network IP, and options that govern how the container(s) should run. A Pod represents a unit of deployment: a single instance of an application in Kubernetes, which might consist of either a single container or a small number of containers that are tightly coupled and that share resources.
+
+Container:
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+Container rumtime is the software that is responsible for running containers. Kubernetes supports Dockers(det de bruger).
+
+Kubelet:
+An agent that runs on each node in the cluster. It makes sure that containers are running in a pod, and communication between master and nodes.
+
+Microservices:
+
+3.5
+Docker is used to divide servers into separate sandboxes to ensure the different services would not interact with each others in unforeseen ways. 
+
+3.5
+De har lavet et script til at automatisere docker Web-API containers.
+
+4.4
+Testing Environment.
+De har lavet et remote testing environment med "bare-metal hypservisor ESXi". ESXi er en virtual machine monitor, hvor de kan lave de virtuelle maskiner de har brug for, køre tests på dem, herudover har de adgang til hardware resourcerne gennem ESXi. 
+
+5.3.1
+Helm.
+De bruger Helm som deres package manager til at installere, updatere services på deres kubernetes cluster.
+
+5.3.2
+Ingress.
+For at få trafik fra internettet til deres pods, man kan forestille det som en bro mellem indkommende trafik til de services de har kørende på deres nodes.
+Deres ingress er NGINX.
+
+4.7
+De har et script til at aautomatisere kubernetes deployment.
+
+REST API'erne er skrevet i ASP.NET Core
+
+Alle bør nok læse https://datasift.github.io/gitflow/IntroducingGitFlow.html som er beskrivelse af hvordan vi skal bruge branches osv.
+
+Frontend%%%%%%%%%%%%%%%%%%%%%
+MVVM
+XAML
+Xamarin
+
+Extract repeated parts of a view to a seperate control.
+
+Furture Work:
+%http://web.giraf.cs.aau.dk/w/rest_api_-_development/future_work/

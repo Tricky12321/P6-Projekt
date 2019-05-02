@@ -1,0 +1,46 @@
+Sql-net-sqlcipher bedre end sql-net-pcl (da den understøtter encryption) (Findes i nuget)
+
+Database Tabeller (Som vi nok skal have offline)
+    giraf.GuardianRelations
+        Indeholder hvilke guardians der høre til hvilke citizens
+
+    giraf.AspNetUsers (Dette er nok hoved tabellen for brugerne)
+        Indeholder alle Users (Virker som om det er både guardians og citizens)
+        Indeholder Email, Password hashes, Username osv.
+        
+    giraf.Weeks (Indeholder selve ugeplanerne, men ikke hvad der er i ugeplanerne)
+        Hvilken bruger ugeplanen tilhører (GirafUserId)
+        Samt et ID til hvilken Thumbnail der høre til uge planen (ABC eksempel)
+        Weeknumber er hvilken uge i året den tilhører
+        WeekYear er hvilket år planen høre til
+        
+    giraf.Weekdays (Indeholder de enkelte dage, men stadig ikke hvad der er i ugeplanerne)
+        WeekID er hvilken uge fra giraf.Weeks tabellen den tilhører
+        WeekTemplateID Kan være et template ID som kan bruges istedet for
+        
+    giraf.Pictograms (Indeholder pictogrammer som longblob's i databasen)
+        Alt i denne tabel beskriver sig selv
+        
+
+
+Der er flere tabeller vi skal have, men dette er nok de vigtigste
+
+
+
+Implementation af SQLite i C# Xamarin
+
+private void SqlLiteTest()
+{
+    var db = new SQLiteConnection("GirafOffline");
+    db.CreateTable<AspNetUsers>();
+}
+
+public class AspNetUsers
+{
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+    [Indexed]
+    public string Email { get; set; }
+    public string PasswordHash { get; set; }
+    public string UserName { get; set; }
+}

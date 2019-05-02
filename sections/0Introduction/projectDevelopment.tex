@@ -1,0 +1,75 @@
+%\section{Project Development} % Mads og Lasse
+%%Multi-project
+%Because of the multi-project setting, where several %groups had to work together on one product, it was %necessary to establish good communication between the %groups and structure the work on the product among %groups. 
+%
+%%Råd fra sidste år
+%%Specialiserede grupper -> full stack
+%%META-grupper (skill groups)
+%
+%\subsection{Group Organization}
+%In the previous year, each group were assigned an area of %responsibility:
+%\begin{itemize}
+%    \item Front-end
+%    \item Back-end
+%    \item Server
+%    \item Scrum
+%    \item Product Owner
+%\end{itemize}
+%
+%However, they found it difficult to distribute knowledge %between groups and advised against this structure. %Instead, they advised the use of full stack groups, where %each group works with all parts of the product by %implementing user stories. This is the structure chosen %to organize groups in this semester. Each group had one %specialized skill member for each of the topics: 
+%
+%\begin{table}[h]
+%\begin{tabularx}{\textwidth}{l|X}
+%\hline
+% Front-end  & Discuss and share knowledge about front-end %of the GIRAF client application.  \\ \hline
+% Back-end   & Discuss and share knowledge about the API, %the communication with database, the clients %communication with the API and the clients back-end.   %\\ \hline
+% Server     & Discuss and share knowledge about which %servers are necessary, their functionality and the %maintenance of them.\\ \hline
+%\end{tabularx}
+%\end{table}
+%
+%The skill groups were an attempt to solve the problem of %communication between development groups, while still %allowing the development groups to discuss the %development and maintenance of each of the three parts of %the product.
+%Despite the change to skill groups for the different %parts of the product, scrum and product owner %responsibility was still assigned to two of the %development groups. The scrum group had the %responsibility of making decisions about and controlling %the process, while the product owner group had the %responsibility of being in contact with the customers to %find requirements and make sure the product fits the %customers needs.
+%%PO-group
+%
+%\subsection{Scrum}
+%\label{Scrum}
+%%Scrum (scrum of scrums)
+%The process used to structure the work between groups was %based on the Scrum framework, but changed slightly along %the way. More specifically, we used a scrum of scrums %approach. This means that one group acted as the scrum %master (the scrum group), with the job of administrating %the process. 
+%Work was organized into four sprints, with the goal of %having a new release ready at the end of each sprint. 
+%
+%%Product Backlog
+%A \textbf{product backlog} was available at all times, %managed by the PO-group, which contained prioritized user %stories covering the work that needed to be done on the %product.
+%
+%%Sprint Planning
+%The first sprint started with a \textbf{sprint planning} %meeting, where all group members of each group were %present. The PO-group started by presenting the user %stories and the sprint goal. The development groups then %selected the user stories they wanted to work with and %created an estimate in story points of how long it would %take to complete it. When all groups had been assigned %user stories and the PO-group had approved them, the %meeting was over. 
+%
+%However, this approach was not used in the following %sprints. It was changed to a \textbf{sprint introduction} %meeting, where the PO group still presented the sprint %goal and high priority user stories, but user stories %were not assigned during the meeting. Instead, %development groups would assign themselves to user %stories when they needed more work during the sprint. 
+%
+%%Standup Meetings
+%During the sprints, a 15 min \textbf{standup meeting} was %held every week, where one representative from each %development group participated. In the meeting, the %participants discussed the progress of their group along %with any possible conflicts they may have had, or %dependencies with the work of other groups.
+%
+%%Sprint Review
+%A \textbf{sprint review} was held at the end of every %sprint. The goal of this meeting was to evaluate the %product. Each development group was required to have one %representative present at this meeting. The %representative would present the group's implementation %and the state of their user story(ies). Based on how the %user story satisfied the user's needs, the PO-group would %either accept or reject the implementation.
+%Throughout the meeting the rest of the groups were %encouraged to provide feedback.
+%
+%%Sprint Retrospective
+%The \textbf{sprint retrospective} meeting was also held %at the end of each sprint, and was used to evaluate and %improve the multi-project process. Everyone was present %at the meeting, where development groups were mixed %together to discuss ideas and problems across groups. %These were written down, and in the end everyone voted on %them, to find the most important ones.
+%
+%%\subsubsection{Scrum of Scrums}
+%%From recommendations from the last semester, the concept %of scrum of scrums has been introduced in this semesters %multi-project. Scrum of scrums means that the development %process will have one master \todo{Andet ord} scrum %containing an overall product backlog from which tasks %will be assigned to development groups. These tasks can %then be administrated by the development groups into a %smaller scrum. The administrators of the master scrum %\todo{Andet ord} are the scrum group.
+%
+%More details about the process can be found in the %process manual written by the scrum group, SW602F19 %\citep{projectManualSW602F19}.
+%
+%\subsection{Version Control}
+%%Code workflow (gitflow)
+%Version control in GIRAF was managed using Github. Each %part of the GIRAF product had its own repository which %was used for the version control of the specific product. %The repository had several branches:
+%\begin{itemize}
+%    \item (1) Master
+%    \item (1) Development
+%    \item (1) Release
+%    \item (*) Feature
+%\end{itemize}
+%
+%The master branch contained products that were ready for %release, and should always be able to be build. The %development branch contained the version of the product %that was being developed at the time. The development %branch should also always be able to be build. When a %version of the product was ready for release, it was %merged into the release branch. Lastly, we had the %feature branches, which were used for the implementation %of new features in the product. The feature branches were %normally used by one development group, and the group was %responsible for the content of the branch. This meant %that this type of branch might not be able to be build %and might contain untested code.
+%
+%\todo{Write about Pull Requests and Reviews and maybe the %structure of user stories/issues}%

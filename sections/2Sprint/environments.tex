@@ -1,0 +1,23 @@
+ \section{User story 83: Load configuration from configuration file}
+\label{sect:Environments}
+This section regards the environments feature, that allows for some variables to be set in a json file, and loaded into the app at launch. The purpose of this task is to allow variables such as debug and server host to be stored in a file, where it can be changed without the need to recompile the app. 
+
+The json format was chosen since a json decoder is built-in to flutter, and does not require any additional packages. Json is easy to understand and works well compared to alternatives like XML and ini. Json also supports typed variables, giving more consistency and allows for forcing variables to be of a specific type. The content of the json file can be seen in code~snippet~\ref{code:JsonFile}.
+
+\code   {sections/2Sprint/code/json.txt} %Filepath
+        {Json file content.} %Caption
+        {code:JsonFile} %Label
+
+It was decided early in the development process, that there should be two different environment files, one for production and one for testing. The app should be able to detect if it is in debug mode, and load the correct file accordingly.
+
+The method used for detecting debug mode can be seen in the code~snippet~\ref{code:Debugmodemethod}. This code exploits the assert function, since it is only run in debug mode. Assert is used to set a variable to true. This results in a variable that is true while in debug mode and false otherwise.
+
+\code   {sections/2Sprint/code/debugmode.txt} %Filepath
+        {Method for checking if the app is in debug mode.} %Caption
+        {code:Debugmodemethod} %Label
+
+The environments have some global methods, used to read from a json file and decode it. This makes it available anywhere without the need for dependency injection. This is done to avoid the class being instantiated every time environments have to be used. Environments contain the code shown in code~snippet~\ref{code:EnvironmentsFile}.
+
+\code   {sections/2Sprint/code/environments_file.txt} %Filepath
+        {Environments file, with all methods.} %Caption
+        {code:EnvironmentsFile} %Label
