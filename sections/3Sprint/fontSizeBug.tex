@@ -1,0 +1,6 @@
+\section{Issue \#194: Inconsistent Font Size in Citizen Selection}
+Issue \#194 was a bug found during release preparation. The problem was that the names of citizens were displayed in different font sizes when the length of the names were different. 
+This problem was due to the fact that an 'AutoSizeText' widget was used to adjust the font size across devices with different screen size. This had the unfortunate side effect that the length of the name affected the size as well. 
+
+The problem was fixed by checking whether the application was running on a smartphone or a tablet, based on the screensize. The font size was then adjusted based on this information, instead of using an 'AutoSizeText'.
+This meant that the font size of all names were the same, regardless of the length of the name. 

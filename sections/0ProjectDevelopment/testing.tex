@@ -1,0 +1,15 @@
+\section{Testing}
+\label{sect:testing}
+To keep a high level of reliability, the product has been tested in different ways. Testing will be done on all parts of the product.
+
+\subsection{Integration Testing}
+In Flutter, all UI components are seen as widgets, and therefore these are tested using widget tests. In our product we specialise our widgets in the categories screens, widgets and dialogs. All these are tested in unique ways but uses the same template:
+\begin{itemize}
+    \item Widgets are rendered.
+    \item Widgets has the expected properties.
+    \item Widgets has the expected functionality.
+    \subitem For example, performing an action or navigating to other widgets. 
+\end{itemize}
+
+\subsection{Unit Testing}
+Unit testing is in this project used to test the BLoC methods as well as the web-API. Unit testing tests methods with different inputs and checks the output. The tests should test common values, wrong values and boundary values.  

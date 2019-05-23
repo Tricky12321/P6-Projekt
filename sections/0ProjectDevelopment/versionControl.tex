@@ -1,12 +1,31 @@
 \section{Version Control}
 \label{sect:versionControl}
 %Code workflow (gitflow)
-In the project, several groups had to work on the same product at the same time. To make this possible, version control in GIRAF was managed using Github. Each part of the GIRAF product had its own repository which was used for the version control of the specific product. The repository had several branches:
+
+In this project, several groups had to work on the same product at the same time. To make this possible, some sort of version control was necessary. In GIRAF, git was used and managed with GitHub, following the principles of Gitflow Workflow described by BitBucket \citep{cite:gitFlow}. Each part of the GIRAF product had its own repository, which was used for the version control of the specific part of the product. To manage different versions of the product, several branches were used:
 \begin{itemize}
-    \item (1) Master
-    \item (1) Development
-    \item (1) Release
-    \item (*) Feature
+    \item One development branch
+    \item Several feature branches
+    \item One release branch
+    \item Several release fix branches
+    \item One master branch
 \end{itemize}
 
-The master branch contained products that were ready for release, and should always be able to be build. The development branch contained the version of the product that was being developed at the time. The development branch should also always be able to be build. When a version of the product was ready for release, it was merged into the release branch. Lastly, we had the feature branches, which were used for the implementation of new features in the product. The feature branches were normally used by one development group, and the group was responsible for the content of the branch. This meant that this type of branch might not be able to be build and might contain untested code.
+The structure of the different branches can be seen on figure~\ref{fig:branchStructure}.
+The development branch was used to manage the new features developed during the sprints. 
+
+The actual development was done on the feature branches. When developing a new feature or changing existing code, a new feature branch would be created, branching out from the develop branch. This allowed all groups to work on the code at the same time. Figure~\ref{fig:branchStructure} shows three examples of feature branches. They branch out, develop and commit changes for a while until the work is complete, then merge back into the develop branch. More details about the structure of this process is explained in section~\ref{sect:workOrganization}.
+
+In the end of each sprint, a release branch was created with the contents of the develop branch at the time, shown by the branching from develop to release on figure~\ref{fig:branchStructure}.
+
+The code was then polished by removing bugs and adjusting the UI to prepare it for the master branch. This was done by creating release fix branches, branching out from the release branch, fixing the problem(s) and merging back into release.
+
+The master branch contained the newest stable release of the product, shown by the merging from release into master on figure~\ref{fig:branchStructure}. 
+The version on the master branch should be usable without any problems and should thus be able to build and run at all times. 
+Additionally, after a release was finished, the release branch was merged into the develop branch for use in the following sprint.
+
+\figur  {H} %Placement
+        {1} %Size
+        {sections/0ProjectDevelopment/images/branch_illustration.png} %Filepath
+        {The structure of the branches used for version control in GIRAF.} %Caption
+        {fig:branchStructure} %label

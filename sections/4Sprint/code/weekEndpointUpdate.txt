@@ -1,0 +1,11 @@
+if (week != null) {
+    foreach (var weekday in week.Weekdays) {
+        foreach (var activity in weekday.Activities) {
+            if (activity.TimerKey != null) {
+                var timerPlace = _giraf._context.Timers.FirstOrDefault(t => t.Key == activity.TimerKey);
+                activity.Timer = timerPlace;
+            }
+        }
+    }
+    return new Response<WeekDTO>(new WeekDTO(week));
+}

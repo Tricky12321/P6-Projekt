@@ -1,43 +1,43 @@
 \input{setup/preamble.tex}% package inclusion and set up of the document
 \input{setup/hyphenations.tex}% 
 \input{setup/macros.tex}% my new macros
-
 \begin{document}
 %frontmatter
 \pagestyle{plain} %disable headers and footers
 \pagenumbering{roman} %use roman page numbering in the frontmatter
 \input{setup/setupFiles/frontpage.tex}
-\input{setup/setupFiles/colophon.tex}
+%\input{setup/setupFiles/colophon.tex}
 \input{setup/setupFiles/titlepages.tex}
 
 \input{setup/setupFiles/preface.tex}
 \input{setup/setupFiles/readersGuide.tex}
 %\cleardoublepage
 \pdfbookmark[0]{Contents}{label:contents}
+
 %\pagestyle{fancy} %enable headers and footers again
+\setcounter{tocdepth}{1}
 \tableofcontents
 \listoftodos
 
 %mainmatter
+ %use arabic page numbering in the mainmatter
 \pagenumbering{arabic}
-\include{sections/0Introduction/0Introduction}
+\include{sections/-1Introduction/-1Introduction}
 \include{sections/0ProjectDevelopment/0ProjectDevelopment}
 \include{sections/1Sprint/1Sprint}
 \include{sections/2Sprint/2Sprint}
 \include{sections/3Sprint/3Sprint}
 \include{sections/4Sprint/4Sprint}
-\include{sections/collaboration1/introduction}
-\include{sections/collaboration2/introduction}
-\include{sections/futureWork/futureWork}
-\include{sections/evaluation/conclusion}
-
- %use arabic page numbering in the mainmatter
+\include{sections/evaluation/evaluation}
 
 \begingroup
 	\raggedright
-	\bibliography{bib/mybib}
+	\bibliography{setup/bib/mybib}
 \endgroup
+    \label{sect:bib}
 
+\addcontentsline{toc}{part}{Appendix}
 \appendix
-\input{sections/appendix/appAName.tex}
+\input{sections/appendix/fullEndpointMethods.tex}
+\input{sections/appendix/ERD.tex}
 \end{document}

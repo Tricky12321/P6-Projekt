@@ -1,20 +1,20 @@
-\section{User Story 9: Making the App Available Offline}
+\section{Issue \#9: Making the Application Available Offline}
 \label{sect:OfflineSupportFirstUserStory}
-This issue had the title: As a guardian, I would like that the app is fully available offline so that I can still use it if the internet is down.
-After being introduced to this user story, we started brainstorming how such a problem could be solved. We came up with the following general structure:
+This issue consisted of the user story: "As a guardian, I would like that the app is fully available offline so that I can still use it if the internet is down".
+After being introduced to this user story, we started brainstorming how such a problem could be solved. We came up with the general structure seen on figure~\ref{fig:offlineDiagram}.
 
 \figur  {H} %Placement
         {1} %Size
-        {sections/0Introduction/images/offlineSupportPicture.png} %Filepath
+        {sections/-1Introduction/images/offlineSupportPicture.png} %Filepath
         {Diagram of the planned implementation of the user story.} %Caption
         {fig:offlineDiagram} %Label
 
-To make the application usable offline, the main idea was to make an offline-mode that could be toggled on and off by a guardian. By toggling offline-mode the guardian will download all the necessary information about each of the belonging citizens into the offline database. While having offline-mode toggled, the application should synchronize the offline database with the online database whenever connected to the internet. If the device on the other hand is offline, the plan was to save all web API calls until the device is once again online. When this happens, all the web API calls will be executed to make the online database up to date again. 
+To make the application usable offline, the main idea was to make an offline mode that could be toggled on and off by a guardian. By toggling offline mode the guardian would download all the necessary information about each of the belonging citizens into an offline database. While having offline mode toggled, the application should synchronise the offline database with the online database whenever connected to the internet. If the device on the other hand was offline, the plan was to save all web-API calls until the device was online again. When this happens, all the web-API calls will be executed to synchronise the online database. 
 
-The offline database would be developed using an SQLite database, which had a Xamarin supported library. The interface between the offline database and the weekplanner application would be developed to mimic the web API calls and in that way prohibit illegal data manipulation. The offline saved API calls would then be executed when the device is online again, without any additional conversion between the API calls and offline database calls.
+The offline database would be developed using an SQLite database, which was supported in Xamarin. The interface between the offline database and the weekplanner application would be developed to mimic the web-API and in that way prohibit illegal data manipulation. The saved API calls should then be executed once the device is online again, without any additional conversion between the web-API calls and offline database calls.
 
 One problem that was discussed, but where a concrete solution was not found, was if two different guardians was in offline mode while sharing the information of one or more citizens. 
-The problem with this is whether changes from one or the other guardian should be saved online if both guardians had made changes in the same citizen's information, while in offline mode. 
+The problem with this was whether changes from one or the other guardian should be saved online, if both guardians had made changes in the same citizen's information while in offline mode. 
 A possible solution was to only allow a citizen to be saved offline at one guardian's device at a time.
 
-As the user story at this time was put on a hold, the development of offline mode was not discussed further.
+As the issue at this time was put on a hold due to the change in goals, the development of offline mode was not discussed further.

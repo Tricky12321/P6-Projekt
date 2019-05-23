@@ -1,28 +1,28 @@
-\section{User story 53: Re-order activities in week plan}
-Sometimes it is necessary for a guardian to be able to reorder the activities in a citizen's weekplan. The user story involves the task:
+\section{Issue \#53: Re-order activities in week plan}
+This issue consisted of the user story: "As a guardian, I would like to be able to re-order the activities in a weekplan, so I can easily re-prioritize the activities for the citizen". Sometimes it is necessary for a guardian to be able to reorder the activities in a citizen's weekplan. The user story involves the task:
 \begin{itemize}
     \item After long pressing a pictogram, the view should allow dragging it up or down to re-order the sequence.
 \end{itemize}
-Before actually starting to implement the user story, we consulted the PO-group about which drags should be accepted. They settled on allowing drags to any of the weeks days, this included days with no activities.
+Before actually starting to implement the user story, we consulted the PO-group about which drags should be accepted. They settled on allowing drags to any of the week's days, including days with no activities.
 
 Flutter has widgets called LongPressDraggable and DragTargets, which allow for this type of functionality.
-\todo{opdater med en kort beskrivelse af hvordan de konkret fungere, f.eks. med de metoder de også har.}
+\todo{opdater med en kort beskrivelse af hvordan de konkret fungerer, f.eks. med de metoder de også har.}
 Each day of the week contains a list of activities, which are the pictograms shown in the weekplan screen. These pictograms are therefore both LongPressDraggable and a DragTarget.
 When the long press drag is initiated, the pictogram that is being dragged will be greyed out and a non greyed out version will follow the pointer of the drag. The ordering of each day's pictograms is based on an attribute on the activity objects called 'order'. This means that when a pictogram has been dragged to a new spot, the order should be updated accordingly, and the screen reloaded. Furthermore, when dragging, a grey box will appear at the last element of each day. This grey box acts only as a drag target and makes it possible to add another pictogram to a day, as well as to empty days.
 Figure~\ref{fig:dragOnWeekplan} displays the drag feature, where the second element of 'Onsdag' is currently being dragged.
 
-\todo{correct image with updated app bar, and if more features are added to the application}
 
-\figur  {H} %Placement
+\figur {H} %Placement
         {0.7} %Size
         {sections/3Sprint/images/Drag.jpeg} %Filepath
         {Dragging a pictogram on the weekplan.} %Caption
         {fig:dragOnWeekplan} %Label
 
-If the pictogram held at figure~\ref{fig:dragOnWeekplan} is dragged to the grey box on 'Torsdag', the held pictogram's order value is updated to match this, and the pictogram is removed from 'Onsdag' and added to 'Torsdag'. Now, all the pictograms from 'Onsdag', which at the moment of the drag had an order value that was higher than the held pictogram, need to have their order value changed according to how they have been rearranged.
+If the pictogram held on figure~\ref{fig:dragOnWeekplan} is dragged to the grey box on 'Torsdag', the held pictogram's order value is updated to match this, and the pictogram is removed from 'Onsdag' and added to 'Torsdag'. Now, all the pictograms from 'Onsdag', which at the moment of the drag had an order value that was higher than the held pictogram (meaning they were below it on the plan), need to have their order value changed according to how they have been rearranged.
 After this, these updates need to be reflected in the database, which is handled by calling the update function on the API.
 The reordering function from the weekplan BLoC can be seen on code~snippet~\ref{code:reorderActivity}.
 
 \code   {sections/3Sprint/code/reorderActivitiesCode.txt} %Filepath
         {The function that updates the order according to the rearranged activities.} %Caption
         {code:reorderActivity} %Label
+        {C} %Language

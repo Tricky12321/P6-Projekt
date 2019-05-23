@@ -1,0 +1,57 @@
+\section{Technologies and Tools} 
+This section describes which tools, frameworks, software and other technologies were used to aid the development of the product for the GIRAF project. 
+
+\subsubsection{Application Program Interface}
+An Application Program Interface (API) is a program interface that allows communication between individual programs.
+The API is a way to interact with other systems, by sending and receiving data over a common protocol. This means that changes can be made to the back end or to the client without the need to update both. \citep{cite:API}
+
+\subsubsection{Azure Pipelines}
+Azure Pipelines is a service provided by Microsoft and can be used for continuous integration. Azure Pipelines supply a wide variety of virtual machines including Windows, Windows Server, Ubuntu and macOS. The reason for choosing Azure Pipelines over other continuous integration solutions was that Azure Pipelines was free and unlimited to open source organisations.
+
+Azure Pipelines was configured to clone the GitHub repository, install Flutter, run the linter, run the tests and compile the application both to Android and iOS. 
+
+\subsubsection{Business Logic Component Pattern}
+The Business Logic Component (BLoC) pattern's purpose is to separate the business logic of an application from its other components. The UI of the application should therefore only concern things that are going to be shown to the user, and the BLoC behind it is responsible for the computations on the business logic \citep{cite:blocPattern}. 
+
+A simple example for the use of the BLoC pattern is a Taxi application, where a user will call a cab through, for example, a button press. The button press will send an event to the BLoC which will then try to order a cab and send it to the user’s location. The BLoC will then send a result back to the UI and the user, whether the cab is on its way or the order was declined.
+
+\subsubsection{Dart} 
+Dart is an Object oriented language, whose syntax is based on the known structures of C\#, Java and C++. Dart also compiles to both ARM and x86, allowing a wide range of supported devices. \citep{cite:DartLang}
+
+\subsubsection{Dependency Injection}
+Dependency injection is the practice of having a container, which contains an object of each class that other classes are dependent on. Through the dependency injector, other classes can ask for the dependency they need, instead of instantiating it themselves. Thereby, a lot of duplicated objects are avoided \citep{cite:dependencyInjection}.
+An illustration of this can be seen on figure~\ref{fig:dependencyInjection}.
+
+\figur  {H} %Placement
+        {1} %Size
+        {sections/-1Introduction/images/DependencyInjection.png} %Filepath
+        {Distribution of members in skill groups.} %Caption
+        {fig:dependencyInjection} %
+
+\subsubsection{Entity Framework}
+\label{section:entityFramework}
+Entity Framework is a framework that abstracts away the communication between a program and a database, by handling models and storing them in the database. Additionally, the framework takes care of fetching the associated information from the database and converting it back into objects. \citep{cite:entityFramework}
+
+\subsubsection{Flutter}
+Flutter is a framework for developing applications for mobile, desktop and web. Flutter is open source and developed by Google. Flutter uses the general purpose programming language Dart. \citep{cite:flutter}
+
+\subsubsection{Git}
+Git is a free open source version control tool, allowing branches, releases, commits and merging in one solution. There are multiple hosting solutions for Git, such as Bitbucket, Phabricator, GitLab and GitHub. Git is used to enable easy collaboration on big projects where many users are required to work on the same files. 
+\citep{cite:Git}
+
+\subsubsection{GitHub}
+GitHub is a free web-based hosting service that is based on Git. GitHub features issue tracking, feature- and pull-requests, task- and release-management and wikis. GitHub is the largest collection of open source software in the world. 
+\citep{cite:Github}
+
+\subsubsection{Linter}
+Linter is a code inspector, which ensures that code is written in the same style and is written according to a standard. A linter ensures that no code, that do not satisfy the standard, are allowed to be merged in pull requests. The linter used in the weekplanner was the dart standard, and was provided by Flutter. 
+
+%\subsubsection{Swagger}
+%Swagger is an API designer tool, that can be used to create and maintain an API. Swagger can generate client- and server-side code, which can then be implemented to perform the desired functions. \citep{cite:Swagger}
+
+\subsubsection{Web-API} 
+A web-API is an API on a web server, taking requests and delivering responses through the HTTP/HTTPS protocols. 
+Normally the requests and responses are in the formats: Extensible Markup Language (XML) or JavaScript Object Notation (json). \citep{cite:WebAPI}
+
+\subsubsection{Xamarin}
+Xamarin is a platform for developing programs and applications. Xamarin focuses on multiplatform support, running on Android, iOS, Windows and macOS. Xamarin is owned by Microsoft, and is created by the engineers behind the Mono Framework. C\# is the primary programming language used and XAML is used for the design. \citep{cite:XamarinVS}

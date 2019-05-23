@@ -1,0 +1,82 @@
+\chapter{Reflection}
+In this chapter we reflect on the overall goals of GIRAF, this includes both the project goals from section~\ref{sect:projectGoals}, but also the learning goals for the project.
+
+\section{Customer Feedback}\label{sect:customerFeedback}
+This section covers the feedback from the two last usability tests.
+
+After the last release, the PO group held usability tests with two of the three customers. The customers were very impressed with the final product, and would very much like it to be put on an application store, so that the parents of the citizens could use it at home.
+
+The representatives from Børnehaven Birken additionally said that it was the best version they had seen in their time working with the GIRAF project, and they were very happy that the application was finally intuitive and functional.
+
+%Susanne Hansen - Børnehaven Birken
+%Kirstine Niss - Børnehaven Birken
+%Mette Frost - Egebakken
+%Emil Paulsen - Egebakken
+
+
+\section{Project Reflection}
+\label{sect:reflection}
+In section~\ref{sect:projectGoals} the main goals of this project are stated. In short terms, the main goals of the project were:
+\begin{itemize}
+    \item Focus on getting a stable release that is fit for use. This requires that we solve or report bugs, when they are encountered.
+    \item A high level of usability, so that less IT experienced people would still be able to use the application.
+    \item Add more stable and usable features once the weekplanner reached a satisfactory level of stability and usability.
+\end{itemize}
+
+Early in the process, the developers of the GIRAF multi-project decided that it would be better to rewrite the entire front-end of the application. This meant that the goal of stability and usability could be focused on from the start.
+When rewriting the front-end, all developers would be a part of the shared code-base. This meant that everyone had a good understanding of the code. When doing a pull request with additions to the code-base, this understanding of the code meant that a lot of bugs were caught before the new code was merged.
+When a sprint was coming to an end, and the co-operative release preparation started, all issues would go through a second round of testing. Here, each of the groups got assigned a couple of issues, and the group's job was then to thoroughly test the implemented feature, and create a bug report if any bugs were encountered.
+A combination of these things was the reason that we achieved a stable application.
+
+To ensure a high level of usability, the PO group did some initial interviews, getting the point of view of the customer about the design and additional requirements. Their interview made the foundation for the prototypes, which the development of issues was based on. When the minimal viable product was developed in Flutter, the PO group tried to arrange a usability test with the customers, when the customers were accessible. From this, the customers expressed which features were most important in the following sprint. More usability tests were held throughout the project, allowing the PO group to sustain a product backlog for the development process. 
+
+The last goal was accomplished during one of the last sprints, where we got an opportunity to add new functionality to the application compared to last year. The features to implement were chosen from the product backlog, as they were deemed to have the most value for the customer. As described in section~\ref{sect:customerFeedback}, the customers were excited about the additional features.
+
+Based on our previous experiences with Xamarin, and the use of Xamarin in sprint one, we had trouble getting an overview of the structure of the application. We think that the transition to Flutter was the right choice, because we felt that it allowed for more rapid development, had a lot of pros as described in table~\ref{table:changeFromXamarinToFlutterProsCons} and it was intuitive to learn. 
+%For the last goal, during the last sprints, when we reached the same functionality as last year, we worked on adding new functionality to the application. The features to be implement were chosen from the product backlog, as they were deemed to have the most value for the customer.
+%Whenever possible, the PO group arranged meetings with customers after each sprint 
+%laver prototyper og vist dem til kunden
+%udvikling ud fra disse prototype
+%efter sprint er der blevet lavet usability tests
+
+As opposed to previous years, this year we worked in full stack teams instead of each group having a designated field of expertise. This meant that the development teams were able to make changes in all parts of the application, and as a result we had little to no dependencies on other development groups, which made the development efficient and rapid.
+Some previous year's students complained about the designated development teams being a bottleneck in the development. Using full stack teams, we think, have minimised this bottleneck.
+
+%TILFØJE HER OM HVAD VI SYNTES OM PROCESSEN.
+%meetings good, more structured (y)
+
+In the beginning of the project, meetings were held where everyone from the GIRAF project sat down in a room and tried to agree on things, mainly the process. This did not work, the meetings took hours and did not solve anything. This is why it was important to have one group dedicated to managing the process, who always had the final say and who could dictate the meetings.
+The process group decided to use Scrum principles described in section~\ref{sect:scrumInGiraf}. As the project went on, the use of these principles were not strictly followed. This resulted in a more loose process, where the guidelines set up in the start of the project could be bent.
+We think this made sense in our project setting, since the two first sprints of the project were hectic, and the front end changes made it hard to estimate story points needed for a detailed sprint planning. If we had more time in the project, we could have given a more qualified estimate for story points. In that case, a more strict process would have been preferable for our own personal development.
+
+Internally in the group, we made use of a few Scrum principles. After sprint two we started using a Scrum Board to track the state of issues and report work. This included todos, work in progress and work needing internal reviews. Through the sprints we sometimes did a sort of Daily Scrum, where we shared the status of our work and knowledge. This was adequate for us in the later sprints as we got better at properly sharing what we worked on and the status of it through a Scrum Board. In the first sprint, Daily Scrums might have been able to solve our problems described in section~\ref{sect:ourRetrospectiveSprint2}. In hindsight, we could preferably have used the Scrum board earlier in the process.
+
+\section{Own Experience Gained}
+As our group has been nearly the same through the last couple of semesters, it is easy to see how much our development process has changed through this multi-project.
+
+Working in \textbf{Full Stack Teams} gave us experience in all the different parts of the application: front-end, back-end and server. Getting our hands on all of these parts in the same user story, while making them work together, was another experience compared to the projects we have made so far. This gave us an insight in how an application would be created in an agile environment.
+
+\textbf{Version control} is one of the areas we improved on the most. In earlier projects, we often only had a master branch and a number of feature branches. Then, when a feature was done it was merged directly into the master branch, even without pull requests. In this project, we have improved our experience with better git flow, through more specified branches and pull requests as described in section~\ref{sect:versionControl} and section~\ref{sect:workOrganization}.
+
+Beside that, we learned how important \textbf{communication} is when working together in a multi-project. We experienced how much the development was delayed, when the communication was compromised. This was especially a problem when we developed the timer in the application, and we were dependent on other features, developed by other groups. Because we were almost always able to ask questions to other groups within a few minutes, we could quickly remove uncertainty when encountered and acquire knowledge from other more experienced developers.
+
+Through our semesters together, we have always programmed in C\#, and we used Xamarin for a single semester. By transitioning to \textbf{Flutter}, we had to learn a new programming language, Dart, and use the features of the Flutter framework. Even though it took us some time to adapt, we still found it practical to learn a new language.
+
+Overall, this project has taught us how important the software development process is for a product. In the project, it helped a lot that we had a PO group that managed the product backlog, prototypes, communication with the customer and so on. It also helped that the Process group managed meetings during the project, including the meetings described in \ref{sect:scrumInGiraf}, the structure for the version control used in the project and so on.
+All this together created a great workflow, which made it easy as a developer to focus on implementing the most important features, and allowed us to get a lot of work done throughout the project.
+
+%Var det en god proces?
+%Var processen god internt? 
+
+% We used git properly, with different branching, instead of just using a single master branch like in previous projects.
+
+% Måske noget med CI: https://www.thoughtworks.com/continuous-integration?fbclid=IwAR2P_5Kz-TarYtZMXA3aoNRDW1pkl67f02CYpZYDkdTxBsuJD6oSkkD3yGI
+
+% Erfaring inden for Scrum.
+
+% Arbejde sammen i teams på tværs af flere grupper.
+
+% PO gruppens usability test
+%   Kunden var meget imponeret
+% Gruppe møder op var godt og dem der ikke mødte gjorde det svære
+% Evaluation about task time

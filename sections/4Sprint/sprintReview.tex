@@ -1,0 +1,30 @@
+\section{Sprint Review}
+
+\subsubsection{Overall Sprint Review}
+%Sprint review meeting? Release party? See review for sprint 3.
+The new functionality now allowed the user to delete weekplans when in the choose weekplan screen. When looking at a weekplan, an edit mode was now available through a icon in the app bar. While in edit mode, several activities could be marked at once, with the option to either cancel, delete or copy the chosen activities. If copying, the user was asked which weekday(s) to copy to. Also, when viewing a single activity, the option was added to cancel the specified activity. On the same screen, it was now also possible to add a timer to the activity, with a specified amount of time, and then pause/play, stop or delete the timer. On the weekplan screen it was now possible to add pictograms from the phone gallery, allowing the guardians to quickly add new pictograms to the system.  
+
+General improvements had also been made by introducing new endpoints in the back-end. This allowed, for example, to update one activity instead of updating the entire weekplan the activity belonged to. 
+
+Beside the changes to the application, a lot of documentation was made during the sprint, which was one of the main goals. The documentation was added to the wiki repository, where all the information about the project and product was stored. 
+
+Overall, the goals of the sprint were considered fulfilled, since all the chosen issues for the sprint were completed and added to the release version. Additionally, a lot of documentation was added to ease the handover to next year's students. Since this was the last sprint, all remaining pull requests were handled, to create the final version of the product. 
+
+\subsubsection{Our Sprint Review}
+Most of our time in the sprint was used on our assigned issues \#2 and \#61, concerning the timer. This was a big user story, that required work in all parts of the product, from the database to the user interface. This is also the reason why we did not work on any documentation issues, despite it being one of the main focus points in the sprint. 
+
+We did however fix a few problems in addition to the timer. Overall, we worked with the following:
+
+\subsubsection{Finished}
+\begin{itemize}
+    \item \textbf{Backend Workshop.}
+        \subitem Unit tests on the backend now worked again, and issues concerning new endpoints were found.
+    \item \textbf{Issue \#209: Bug "Giving wrong login credentials will crash the application."}
+        \subitem The bug no longer occurs when attempting to login with wrong username or password.
+    \item \textbf{Issue \#2: User story "As a citizen I want a timer so that I know how long is left of my current activity."}
+        \subitem A timer can now be shown on an activity while in citizen mode, showing how long is left of the activity, with the option to pause/play or stop the timer.
+    \item \textbf{Issue \#61: User story "As a guardian I would like to be able to add a timer to an activity so that the citizen can see how much time is to be spent on this activity."}
+        \subitem Guardians can now create and delete timers for the activities on the weekplan, which run for a specified amount of time. Citizens can then view these timers.
+    \item \textbf{Azure Pipelines update.}
+        \subitem Azure pipelines can now compile the iOS app, and the Android compiler now runs Ubuntu instead of macOS. Flutter is now more configurable, and the Linter is called linter and no longer bash in the Azure Pipeline script.
+\end{itemize}

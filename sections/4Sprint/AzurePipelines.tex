@@ -1,5 +1,12 @@
-\section{Azure Pipelines update}
-As part of the Server Meta Group, there was a task with adding iOS building to Azure Pipelines, and fixing some names in the Azure Pipelines settings. However since there is still no Apple Developer license available the iOS app cannot be compiled at this time. Because of this the iOS azure pipeline job is disabled until a valid developer license is provided. 
+\section{Azure Pipelines Update}
+%Write about it not being an issue, just some fix
+As part of the Server Meta Group, there was a task with adding iOS building to Azure Pipelines and fixing some names in the Azure Pipelines settings. For example, the Linter was called bash, which caused confusion when the linter failed and Azure Pipeline reported that a bash script had failed. However, since there was still no Apple Developer license available, the iOS app could not be compiled at this time. Because of this, the iOS Azure Pipeline job was disabled until a valid developer license was provided. 
 
-We also moved the android compiler from MacOS to Ubuntu LTS 16.04, because we experienced problems with the Mac VM's used by Azure Pipeline being unstable, and not always available, resulting in no one being able to merge pull requests.
+We also moved the android compiler from macOS to Ubuntu LTS 16.04, because we experienced problems with the Mac virtual machines used by Azure Pipeline being unstable, and not always available, resulting in no one being able to merge pull requests. The iOS compiler still runs on macOS because this is a requirement set by Apple. Apple has made it impossible to compile iOS apps on anything other than macOS. 
 
+The changes made include the following:
+\begin{itemize}
+    \item Changed Android virtual machine from macOS to Ubuntu.
+    \item Extracted flutter to run outside the Azure configuration.
+    \item Added iOS compiler for when Apple Developer License is available.
+\end{itemize}

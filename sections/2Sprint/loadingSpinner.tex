@@ -1,11 +1,11 @@
-\section{User story 48: Continued Development of Loading Spinner}
-This section describes the loading spinner part of user story 48, about a loading spinner on the login screen, when waiting for a response. This was requested because the user does not know whether the screen is frozen or just waiting, when logging in and waiting for a response. 
+\section{Issue \#48: Continued Development of Loading Spinner}
+This section describes the loading spinner part of issue \#48, about showing a loading spinner on the login screen when waiting for a response. This was requested because the user does not know whether the screen is frozen or just waiting, when logging in and waiting for a response. 
  
-The loading spinner was made as a dialog that can be overlayed anywhere in the app.
+The loading spinner was made as a dialog that can be overlaid anywhere in the app.
  
-The loading spinner should be able to timeout after a given period, and then call a method when timed out. This was achieved using a callback method with a timer. 
+The loading spinner should be able to timeout after a given period, and then call a method when timed out. This was achieved by calling a callback method when a timer was done. 
 
-An image of the loading spinner can be soon on figure~\ref{fig:loadingSpinner}.
+An image of the loading spinner can be seen on figure~\ref{fig:loadingSpinner}.
 
 \figur  {H} %Placement
         {0.4} %Size
@@ -14,4 +14,4 @@ An image of the loading spinner can be soon on figure~\ref{fig:loadingSpinner}.
         {fig:loadingSpinner} %Label
 
 \subsubsection{Implementation}
-The loading spinner is implemented as a dialog, that is shown with a Loading circle. This was done so that it could be used anywhere in the app. To allow the loading spinner to timeout, we implemented a callback timer, that after a given amount of time, a void method, with no parameters is called. This allows for functionality that after a certain time, the loading spinner will disappear and the callback method will be called.
+The loading spinner was implemented as a dialog, that was shown with a loading circle. This was done so it could be used anywhere in the app. To allow the loading spinner to timeout, we implemented a callback timer so that, after a given amount of time, a void method with no parameters was called. This allowed for the functionality that, after a certain amount of time, the loading spinner would disappear and the callback method would be called.

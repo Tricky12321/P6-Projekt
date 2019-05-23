@@ -1,25 +1,28 @@
-\section{T2: Timeout To Prevent The API From  Crashing}
-This section regards the task of how to handle requests in order to avoid API crashes. Early in the development of this task, it was recognized that this task could be split into two different sub-tasks. 
+\section{Issue \#7 (web-api): API Timeout to Prevent Crashing}
+This issue consisted of the task of how to handle requests in order to avoid API crashes. Early in the development of this task, it was recognized that this task could be split into two different sub-tasks. 
 
-The first sub-task concerns the front-end, where you could cancel a request if no response is received within a certain time period.
+The first sub-task concerns the front-end, where you could cancel a request if no response was received within a certain time period.
 The other sub-task concerns the API, where each IP gets a limit of requests they can make in a span of X seconds. If the request limit is surpassed, the API will stop handling requests from this IP and throw an error.
 This section covers the part concerning how to limit the number of requests each unique IP can make, while the other sub-task was turned into a new issue on the front-end and is not handled in this section.
 
-In order to implement a rate limit on requests, the implementation of the rate limit makes use of the NuGet package AspNetCoreRateLimit by Stefan Prodan \citep{cite:RateLimitGithub}. By using this package and adding this code to the ConfigureServices method, as seen on code~snippet~\ref{code:RateLimitCode}
+In order to implement a rate limit on requests, the implementation of the rate limit makes use of the NuGet package AspNetCoreRateLimit by Stefan Prodan \citep{cite:rateLimitGithub}. With this package and the use of the setup file in code~snippet~\ref{code:rateLimitCode}, the rate limiting was possible.
 
 \code   {sections/2Sprint/code/configServices.txt} %Filepath
-        {Configurations of the IServiceCollection \citep{cite:RateLimitGithub}.} %Caption
-        {code:RateLimitCode} %Label
+        {Configurations of the IServiceCollection \citep{cite:rateLimitGithub}.} %Caption
+        {code:rateLimitCode} %Label
+        {C} %language
 
-After configuring the IServiceCollection, the rate limiting can be adjusted by directly changing the appsettings.Development.json file as seen on code~snippet~\ref{code:RateLimitJson}.
+
+After configuring the IServiceCollection, the rate limiting can be adjusted by directly changing the appsettings.Development.json file as seen on code~snippet~\ref{code:rateLimitJson}.
 
 \code   {sections/2Sprint/code/rateLimitingJson.txt} %Filepath
         {Configurations of the rate limitng in the appsettings.Development.Json file.} %Caption
-        {code:RateLimitJson} %Label
+        {code:rateLimitJson} %Label
+        {C} %language
 
-Since we at the moment do not have different rate limitations on different endpoints, the "EnableEndpointRateLimitng" field on line 2 is set to false. This means that the "GeneralRules" makes no exceptions and affects all endpoints. 
+Since we at the moment do not have different rate limitations on different endpoints, the "EnableEndpointRateLimitng" field on line 2 is set to false. This means that the "GeneralRules" affects all endpoints. 
 
-On line 3, "StackBlockedRequests" concerns how blocked request should be handled in comparison to other limits. In the example~\ref{code:RateLimitJson} the limit of request in one second is set to five. If it additionally had an upper limit of 100 requests a day, the "StackBlockedRequests": false, would not count any blocked request towards the daily limit. However, if "StackBlockedRequests" is set to true, any blocked requests within the first second is still counted towards the daily limit, even though the requests are not handled.
+On line 3, "StackBlockedRequests" concerns how blocked requests should be handled in comparison to other limits. In the setup~code~\ref{code:rateLimitJson} the limit of requests in one second is set to five. If it additionally had an upper limit of 100 requests a day, the "StackBlockedRequests": false, would not count any blocked request towards the daily limit. However, if "StackBlockedRequests" is set to true, any blocked requests within the first second is still counted towards the daily limit, even though the requests are not handled.
 
 The "HttpStatusCode" field on line 4 defines the status code of a blocked request, if the number of requests surpasses the limit.
 

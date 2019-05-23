@@ -1,0 +1,5 @@
+\section{Issue \#209: Wrong Login Credentials Crashes Application}
+During the release preparation of sprint 3, problems were discovered after the release was made, so hotfixes had to be made. One problem was the bug that the app sometimes crashed when logging in with wrong credentials. This was a bug that occurred when the logout feature was merged with the loading spinner and wrong username/password notify dialog on the login screen. This was solved in a hotfix, which was pushed to master a few days later, and came as a release fix.
+
+It was fixed by reverting the commits that broke the functionality. This meant that the other functionality had to be reimplemented as a new issue.
+The problem was the added functionality broke other functionality because it was not tested properly.  

@@ -13,7 +13,7 @@
 %  GNU General Public License for more details.
 %
 %  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
-%
+%p
 \documentclass[11pt,a4paper,openright]{report}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Language, Encoding and Fonts
@@ -113,25 +113,6 @@
 
 \usepackage{tabularx}
 \usepackage{listings}
-\lstset{%
-	numbers=left,
-	frame=single,
-	basicstyle=\small,
-	numbers=left,
-	numberstyle=\tiny,
-	numbersep=15pt,tabsize=4,
-	flexiblecolumns=true,
-	frame=l,
-	framesep=10pt,
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen}, 
-	stringstyle=\color{red},
-	numberstyle=\tiny\color{gray},
-	language=C,
-	breaklines=true,
-	breakatwhitespace=true,
-	morekeywords={*,num,String,var,library,get,set, bool, assert, dynamic, Future, async, await, Weekday, ActivityModel, WeekModel, UsernameModel} ,
-}
 
 \definecolor{red}{rgb}{0.6,0,0} % for strings
 \definecolor{blue}{rgb}{0,0,0.6}
@@ -160,12 +141,14 @@
 % typesetting the layout.
 \usepackage{calc}
 
+%\setlength{\parskip}{1em}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 % http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{natbib}	
-\bibliographystyle{abbrvnat}	
+\bibliographystyle{agsm}	
 %\addbibresource{bib/mybib}
 \usepackage{csquotes}
 
@@ -223,7 +206,26 @@
 	\end{figure}
 }
 
-\newcommand{\code}[3]{
+\newcommand{\code}[4]{
+\lstset{%
+	numbers=left,
+	frame=single,
+	basicstyle=\small,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=15pt,tabsize=4,
+	flexiblecolumns=true,
+	frame=l,
+	framesep=10pt,
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen}, 
+	stringstyle=\color{red},
+	numberstyle=\tiny\color{gray},
+	language=#4,
+	breaklines=true,
+	breakatwhitespace=true,
+	morekeywords={*,num,String,var,library,get,set, bool, assert, REFERENCES,  dynamic, Future, async, await, Weekday, public, class, ActivityModel, WeekModel, UsernameModel, foreach,} ,
+}    
     \renewcommand{\lstlistingname}{Code~Snippet}
     \lstinputlisting[caption={#2}, label={#3}, captionpos=b]
     {#1}

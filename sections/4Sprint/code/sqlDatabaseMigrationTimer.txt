@@ -1,0 +1,12 @@
+CREATE TABLE `Timers`(
+  `Key` Integer,
+  `StartTime` Integer,
+  `Progress` Integer,
+  `FullLength` Integer,
+  `Paused` Boolean,
+  PRIMARY KEY (`Key`)
+);
+
+ALTER TABLE `Activities` ADD `Timer` Integer;
+
+ALTER TABLE `Activities` ADD FOREIGN KEY (`Timer`) REFERENCES `Timers`(`Key`);

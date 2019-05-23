@@ -1,0 +1,9 @@
+public class Timer
+{
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public long Key { get; set; }
+    public long StartTime { get; set; }
+    public long Progress { get; set; }
+    public long FullLength { get; set; }
+    public bool Paused { get; set; }
+}

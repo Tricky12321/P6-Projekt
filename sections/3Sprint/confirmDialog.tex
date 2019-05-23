@@ -1,11 +1,10 @@
-\section{User Story 158: Confirmation Dialog}
-This user story regards the creation of a generic dialog used to confirm a chosen action. An example use case could be clicking the logout button in the application. You would then be prompted with a popup dialog, asking if you're certain you want to logout. The dialog would include two buttons, one to confirm the action and one to cancel it. This dialog can then be used several other places as well, for example when deleting an activity or a weekplan. 
+\section{Issue \#158: Confirmation Dialog}
+This issue consisted of the task: "As a developer I would like a default widget for confirmation dialogs". This required the creation of a generic dialog used to confirm a chosen action. An example use case could be clicking the logout button in the application. You would then be prompted with a popup dialog, asking if you are certain you want to logout. The dialog would include two buttons, one to confirm the action and one to cancel it. This dialog can then be used in several other places as well, for example when deleting an activity or a weekplan. 
 
-Due to the requirement of being usable in several different parts of the application, it was created to include a custom title, description and confirmation button. Only the cancel button was created to be identical for all instances of the dialog, since the action for the button would always be the same, namely closing the dialog without further action.
+Due to the requirement of being usable in several different parts of the application, it was created to include a custom title, description and confirmation button. Only the cancel button was created to be identical for all instances of the dialog, since the action for that button would always be the same, namely closing the dialog without further action.
 The title, description and confirmation button must be specified for each instance of the dialog, based on the use case. The action button should be given an icon, a short textual description and the function to call when the button is clicked, performing the confirmed action.
-The design of the dialog was made to fit the prototype provided by the PO group, and can be seen on figure~\ref{fig:ConfirmDialog}.
+The design of the dialog was made to fit the design guide provided by the PO group, and can be seen on figure~\ref{fig:ConfirmDialog}.
 
-\todo{correct image when the button widget is implemented}
 
 \figur  {H} %Placement
         {0.4} %Size

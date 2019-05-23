@@ -1,23 +1,28 @@
-\section{API Update}
-There was an issue with the database and the API, requiring a lot of data being transferred when pictograms were requested. This was a problem because the database had trouble handling the huge amounts of data. 
+\section{Issue \#11 (web-api): Back-end returns \textasciitilde 1 GB data on every pictogram search.}
+\label{sect:backendImprovement}
+\textbf{The following section describes a collaboration between group SW602F19, SW609F19, SW611F19, and SW612F19, and as such, will appear in all of the groups' reports as is written here.}
 
-During inspection of why this was the case, it was discovered that the entire pictograms were stored in the database, requiring the pictograms to be extracted from the database every time a request for pictograms was made. 
+With both a new ability for the frontend to search for Pictograms and a monitoring tool for the servers, we noticed transfers of several gigabytes between the database and the backend every time the frontend searched. Performing several searches in a short timespan was guaranteed to crash the backend or the database.
 
-In order to solve this, we decided to extract the pictograms from the database and have them stored on disk, so they could just be loaded by the API. We than did some bench marking to determine if the change had improved the data transfer and response time. The results showed a huge improvement in both data transferred and response time. The improvement can be seen in table~\ref{tab:newApi}.
+A more in-depth inspection found that the database stored all the pictogram-images, which requires the database to extract vast amounts of binary-image-data for each pictogram related query. Furthermore, the API ensured that all pictograms loaded should be Base64 encoded on load, which meant that all pictograms traveling through the API, had to go through relatively large processing.
+
+We decided to extract the pictograms from the database and instead store them as files on disk, which relieved the database of the large transfers. The extraction itself was not enough to stop the crashing of the API, as the pictograms were still being Base64 encoded. We decided to remove the image property from the pictogram DTO, as it contained the Base64 encoded image, thereby halting all encoding.
+
+The solution showed a massive improvement in both the amount of data transferred and response time as seen on \autoref{tab:newApi}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l|l|l|}
+    \begin{tabular}{|l|r|r|}
     \hline
-                    & Data transferred   & Response time \\ \hline
-        Old         & 14020 MB          & 1482 ms       \\ \hline 
-        New         & 60 MB             & 30 ms         \\ \hline
-        Improvement & 234x              & 49x           \\ \hline
+                    & Data transferred      & Response time     \\ \hline
+        Old         & 14\,020 MB            & 1\,482 ms         \\ \hline 
+        New         & 60 MB                 & 30 ms             \\ \hline
+        Improvement & 23\,400\%             & 4\,900\%          \\ \hline
     \end{tabular}
-    \caption{Api before and after changes}
+    \caption{API timings before and after changes}
     \label{tab:newApi}
 \end{table}
 
-The massive improvement is due to data being stored outside the database, thus not needing to be fetched from the database, first being transferred to the api and than to the client. Instead, it can be directly transferred to the client from the api. This improvement has other advantages than just being faster, it also puts less load on the database, allowing the database to handle more connections. This also massively reduced the size of the database, making it much easier to search in, and puts less stress on the disk.
+The most significant improvement was extracting the pictogram images from the database onto a network file share, which relieved the database immensely. This improvement has other advantages than just being faster; it also puts less load on the database, allowing the database to handle more simultaneous connections and it massively reduced the size of the database, making it much easier to search in.
 
-The conclusion is that the improvement to the back end has decreased the amount of data being transferred, decreased the work the database has to handle, and improved the response time massively. This update was worked on by members of the Server meta group, and was implemented with changes to the api and database. 
+After the improvements, searching for pictograms takes a fraction of the time it took before the improvement. The specific improvement also translates to an overall improvement of the system, as the system can allocate more resources to other parts of the API.

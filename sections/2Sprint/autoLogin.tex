@@ -1,10 +1,10 @@
-\section{T1: Auto-Login}
-\label{sect:AutoFill}
-This section regards the Auto-Login feature, used for debugging. The point of the Auto-Login feature is to allow for easy login as a test user, without the need to enter a username and password every time the application is run. This was important to speed-up future development.
+\section{Issue \#73: Auto-Login}
+\label{sect:autoFill}
+This section regards the Auto-Login feature used for debugging. The purpose of the Auto-Login feature is to allow for easy login as a test user, without the need to enter a username and password every time the application is run. This was important to speed-up future development.
 
-In order to implement the auto-login button, we had to add a button that only was visible when running the app in debug mode. This task was dependent on the load environment variables described in section~\ref{sect:Environments}, which was where the debug variable was set and stored. 
+In order to implement the auto-login button, we had to add a button that was only visible when running the app in debug mode. This task was dependent on the load environment variables described in section~\ref{sect:environments}, which was where the debug variable was set and stored. 
 
-The button was placed on the login screen, with the intention of logging in as the "Graatand" user, without the need to fill in the username or password fields.
+The button was placed on the login screen, with the intention of logging in as the Graatand user, a test user with username "Graatand", without the need to fill in the username or password fields.
 This was done by first asking the environments whether the app was in debug mode, and thus render the auto-login button accordingly.
 
 Some logic was added to the button to handle a press action, which simply filled in the text fields with the login information for the Graatand user, and called the login method in the authentication BLoC. The Graatand user information was stored in environments, and was extracted similarly to the debug variable. The design result of the button can be seen on figure~\ref{fig:autoLoginBtn}
